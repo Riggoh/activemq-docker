@@ -84,7 +84,7 @@ RUN apk --no-cache update && \
 
 # Copy the start script.
 COPY ./start-activemq.sh ${HOME_DIRECTORY}/
-
+COPY ./activemq.xml ${CONFIGURATION_DIRECTORY}/
 # Make start script executable.
 RUN chmod +x ${HOME_DIRECTORY}/${START_SCRIPT_NAME} && \
 # Set the owner of all files related to the software to the user which will be used to run it.
