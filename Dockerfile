@@ -14,7 +14,7 @@ FINAL_DIRECTORY_NAME=apache-activemq
 # Software home directory.
 ENV HOME_DIRECTORY=/opt/${FINAL_DIRECTORY_NAME} \
 # Product download URL.
-DOWNLOAD_URL=http://apache.mirrors.spacedump.net/activemq/${VERSION_NUMBER}/apache-activemq-${VERSION_NUMBER}-bin.tar.gz \
+DOWNLOAD_URL=https://archive.apache.org/dist/activemq/${VERSION_NUMBER}/apache-activemq-${VERSION_NUMBER}-bin.tar.gz \
 # Name of user that product will be run by.
 RUN_AS_USER=activemq \
 # Name of start-script that will be executed when a new container is started.
@@ -42,7 +42,7 @@ ENV HAWTIO_WEBAPP_HANDLER_STRING='<ref bean="rewriteHandler"/> \
 # Install NTPD for time synchronization and su-exec (instead of gosu).
 RUN apk --no-cache update && \
     apk --no-cache upgrade && \
-    apk --no-cache add tzdata openntpd su-exec && \
+    apk --no-cache add tzdata openntpd su-exec openssl && \
 # Create the /opt directory in which software in the container is installed.
     mkdir -p /opt && \
     cd /opt && \
